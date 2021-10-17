@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <input
+        type="range"
+        id="range1"
+        value="0"
+        min="0"
+        max="220"
+        oninput="Range()"
+      />
+      <input type="text" id="input1" /><br />
+      <input
+        type="range"
+        id="range2"
+        value="0"
+        min="0"
+        max="220"
+        oninput="Range()"
+      />
+      <input type="text" id="input2" /><br />
+      <input
+        type="range"
+        id="range3"
+        value="0"
+        min="0"
+        max="220"
+        oninput="Range()"
+      />
+      <input type="text" id="input3" /><br />
+      <input
+        type="range"
+        id="range4"
+        value="0"
+        min="0"
+        max="220"
+        oninput="Range()"
+      />
+      <input type="text" id="input4" />
+      <button onclick="loadInputs()">save</button>
+      <br />
+      <div class="box" id="box"></div>
+
+      <div id="container"></div>
+    </div>
+
+    <script src="./js/index.js"></script>
+
+    <script>
+      function loadInputs() {
+        const input = document.getElementById("input4");
+
+        const container = document.getElementById("container");
+        for (let index = 0; index < parseInt(input.value); index++) {
+          const element = createItem();
+        }
+      }
+
+      function createItem() {
+        const input = document.createElement("input");
+        input.classList.add("sa");
+        input.value = "1";
+
+        return input;
+      }
+    </script>
+  </body>
+</html>
